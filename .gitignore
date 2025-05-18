@@ -1,0 +1,8 @@
+dist/
+deploy/
+node_modules/
+logs/
+.env
+.env.production
+*.log
+.DS_Store

@@ -1,0 +1,16 @@
+services:
+  node:
+    build: "./"
+    image: "aidon-comm"
+    container_name: aidon-comm
+    # privileged: true
+    stop_signal: SIGTERM
+    volumes:
+      - ./logs:/app/logs:rw
+      # - "/dev/ttyUSB0:/dev/ttyUSB0:rw"
+    devices:
+      - "${SERIAL_DEVICE:-/dev/ttyUSB0}:/dev/ttyUSB0:rw"
+      # - "/dev/serial0:/dev/serial0:rw"
+    # restart: always
+
+

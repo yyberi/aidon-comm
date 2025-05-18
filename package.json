@@ -1,0 +1,30 @@
+{
+  "name": "@yyberi/aidon-comm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "tsc -p tsconfig.json | tsc -p tests/tsconfig.test.json",
+    "test": "vitest",
+    "test:debug": "vitest --inspect-brk"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.1",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+
+  },
+  "dependencies": {
+    "@yyberi/logger": "^0.0.2",
+    "dotenv": "^16.5.0",
+    "mqtt": "^5.13.0",
+    "crc": "^4.3.2",
+    "moment-timezone": "^0.5.43",
+    "serialport": "^13.0.0"
+  }
+}
