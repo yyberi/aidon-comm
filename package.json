@@ -1,8 +1,27 @@
 {
   "name": "@yyberi/aidon-comm",
-  "version": "0.0.2",
-  "description": "",
-  "main": "./dist/index.js",
+  "version": "0.0.3",
+    "description": "Library for communicating with Aidon smart meters",
+  "keywords": ["Aidon", "smart meter", "communication", "mqtt", "serial", "Iot"],
+  "author": "yyberi",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yyberi/aidon-comm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yyberi/aidon-comm/issues"
+  },
+  "homepage": "https://github.com/yyberi/aidon-comm#readme",
+  "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+  ],
+  "main": "./dist/aidon-comm.js",
   "type": "module",
   "scripts": {
     "start": "node ./dist/index.js",
@@ -10,8 +29,6 @@
     "test": "vitest",
     "test:debug": "vitest --inspect-brk"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
     "@types/node": "^22.10.2",
