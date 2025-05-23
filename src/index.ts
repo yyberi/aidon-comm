@@ -46,12 +46,21 @@ const comm = new AidonComm();
 
 // Subscribe to meter data events
 comm.on('data', (data: Aidon7534Data) => {
-    if (!SIMULATE) {
-        mqttService?.publish(MQTT_TOPIC, JSON.stringify(data), { retain: true });
-    } else {
-        log.info(`Simulated data: ${JSON.stringify(data)}`);
-    }
+  const nowMs = Date.now();
+  const roundedMs = Math.ceil(nowMs / 10000) * 10000;
+  const payload = {
+    ...data,
+    ts: new Date(roundedMs).toISOString(),
+  };
+
+  if (!SIMULATE) {
+    mqttService?.publish(MQTT_TOPIC, JSON.stringify(payload), { retain: true });
+  } else {
+    log.info(`Simulated data: ${JSON.stringify(payload)}`);
+  }
 });
+
+
 
 // Subscribe to error events
 comm.on('error', (err: Error) => {
