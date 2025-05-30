@@ -208,7 +208,7 @@ export class AidonComm extends EventEmitter {
     log.debug(`parseAidon7534(), data: ${data.toString('hex')}`);
     try {
       const tsStart = data.indexOf(Buffer.from('0-0:1.0.0(')) + 10;
-      const meterDateTime = data.subarray(tsStart, tsStart + 12).toString();
+      const meterDateTime = data.subarray(tsStart, tsStart + 13).toString();
       const year = 2000 + +meterDateTime.slice(0, 2);
       const month = +meterDateTime.slice(2, 4) - 1;
       const day = +meterDateTime.slice(4, 6);
