@@ -1,6 +1,6 @@
 {
   "name": "@yyberi/aidon-comm",
-  "version": "0.0.5",
+  "version": "0.0.6",
     "description": "Library for communicating with Aidon smart meters",
   "keywords": ["Aidon", "smart meter", "communication", "mqtt", "serial", "Iot"],
   "author": "yyberi",
